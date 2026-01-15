@@ -1,6 +1,6 @@
-# welcome to my Bootcamp projects
+# welcome to my Bootcamp projects📚
 
-## Technology that I use
+## Technology that I use📋
 
 - Google Sheet
 - SQL
@@ -10,11 +10,11 @@
 - Essential Machine Learning
 - Learning How to Learn
 
-## My Websites
+## My Websites💻
 
 - Website: https://flaluke.wordpress.com
 - Notion: https://notion.site/
 
-## Contact Me
+## Contact Me📮
 
 Email: sherlukeholme@gmail.com🤪

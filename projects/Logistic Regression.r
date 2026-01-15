@@ -1,0 +1,50 @@
+## Logistic Regression Example
+## Binary Classification
+
+happiness <-c(10, 8, 9, 7, 8, 5,9, 6, 8, 7, 1, 1, 3, 1, 4, 5, 6, 3, 2, 0)
+
+divorce <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+df <- data.frame(happiness, divorce)
+
+## Fit Logistic Regression Full Dataset
+model <- glm(divorce ~ happiness, data = df, family="binomial")
+
+summary(model)
+
+## Predict and Evaluate Model
+df$prob_divorce <- predict(model, type="response") # type = "response" จะแสดงออกมาเป็นค่าความน่าจะเป็น
+df$pred_divorce <- ifelse(df$prob_divorce >= 0.5, 1, 0)
+
+## confusion matrix 
+conM <- table(df$pred_divorce, df$divorce, 
+      dnn= c("Predicted", "Actual"))
+
+## Model Evaluation
+cat("Accuracy:", conM[1,1] + conM[2,2] / sum(conM))
+P <- cat("Precision:", conM[2,2] / (conM[2,1] + conM[2,2]))
+R <- cat("Recall:", conM[2,2] /(conM[1,2] + conM[2,2]))
+cat("F1 Score:", 2*((P*R)/(P+R)))
+
+library(titanic)
+
+head(titanic_train)
+
+## Drop NA (missing values)
+titanic_train <- na.omit(titanic_train) # ลบทุกแถวที่มี NA
+nrow(titanic_train)
+
+## SPLIT DATA
+set.seed(6)
+n <- nrow(titanic_train)
+id <- sample(1:n, size=n*0.7) ## 70% train 30% test
+train_data <- titanic_train[id,  ]
+test_data <- titanic_train[-id,  ]
+
+## Train Model
+glm(survived ~ Pclass + Age, data = train_data, family = "binomial")
+
+## Test Model
+
+
+## Accuracy

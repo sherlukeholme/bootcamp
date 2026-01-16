@@ -13,7 +13,7 @@
 ## My Websites💻
 
 - Website: https://flaluke.wordpress.com
-- Notion: https://notion.site/
+- Notion: [![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://early-store-9cd.notion.site/2718efba308d81df9d66cf76f1b78043?v=2718efba308d8165a613000c12783fec)
 
 ## Contact Me📮
 
